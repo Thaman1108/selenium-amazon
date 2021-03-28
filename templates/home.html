@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Cart Amazon</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <script>
+    function myFunction() {
+      $.ajax({
+        url: "/addtocart",
+        type: "GET",
+      }).done(function (response) {
+        var html = "<br><p> <b> RESULT : <b><p>";
+        console.log(response);
+        html += "<p>" + response + "<p>";
+        html += "<br>";
+        $(".show-data").append(html);
+      });
+    }
+  </script>
+  <body>
+    <span>
+      <button class="add-button" onclick="myFunction()" style=" border-radius: 6px;color: white;
+      font-weight: bold;background: #5627e4;border: none;width: 100px;height: 30px;">Add To Cart</button>
+    </span>
+    <div class="show-data"></div>
+  </body>
+</html>
