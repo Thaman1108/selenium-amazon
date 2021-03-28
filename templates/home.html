@@ -12,8 +12,7 @@
         type: "GET",
       }).done(function (response) {
         var html = "<br><p> <b> RESULT : <b><p>";
-        console.log(response);
-        html += "<p>" + response + "<p>";
+        html += "<p>" + response.status + "<p>";
         html += "<br>";
         $(".show-data").append(html);
       });
